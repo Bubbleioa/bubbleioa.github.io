@@ -136,6 +136,8 @@
 
 </head>
 
+
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -293,7 +295,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T21:55:10+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T22:00:00+08:00">
                 2018-06-09
               </time>
             
@@ -329,6 +331,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/09/无聊的锤锤/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/09/无聊的锤锤/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -355,14 +368,15 @@
       
         
           
-            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>罗宏明（白客），1988年7月9日出生于中国山东省泰安市，中国内地新生代男演员，毕业于中国传媒大学南广学院。原先是配音员，《搞笑漫画日和》配音团队cucn201的主要成员之一。2013年因出演导演叫兽易小星的搞笑网剧《万万没想到》中的男一号“王大锤”，从而备受关注。<br>    这么火的搞笑剧中，大家是否注意到这样一个剧情(没看过也没关系的)：王大锤要回家过年，上司不让，无奈之下，王大锤就发挥了自己的聪明才智，决定和上司玩个游戏，想着锤锤是个数学白痴，上司欣然答应，胜了就让他回家。游戏是这样的,开始时，白板上有两个不等的整数，他们轮流行动，每次行动必须在白板上写出任意两个已在白板上出现的整数的差且非负，而且这个数字必须是新的，谁再也写不出来就输了。<br>    为了彰显上司魅力，上司让锤锤先开始。上司足够聪明，当然王大锤也不笨，不然会这么火吗？如果你事先知道白板上的数字，聪明的你能推理出王大锤能否回家呢？</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>测试数据有多组，每组有两个整数，即白板上最初的数字，数据保证在int范围内。</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>每组测试数据输出一行，锤锤能回家就输出“1”，不能输出“0”。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br><span class="line">4 8</span><br></pre></td></tr></table></figure>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一开始还打算用暴力，写到一般就打消了这个念头。其实显而易见的是，对于正整数n,m来说,这两个数相减可以得出的所有数x,则<br><img src="https://s1.ax1x.com/2018/06/09/CqpwdA.png" alt="公式"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF)&#123;</span><br><span class="line">		<span class="keyword">int</span> num=gcd(n,m);</span><br><span class="line">		<span class="keyword">int</span> c1=n/num;<span class="comment">//看它最多能写几个数</span></span><br><span class="line">		<span class="keyword">int</span> c2=m/num;</span><br><span class="line">		<span class="keyword">if</span>(c1&gt;c2)<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,c1%<span class="number">2</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,c2%<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          题目描述罗宏明（白客），1988年7月9日出生于中国山东省泰安市，中国内地新生代男演员，毕业于中国传媒大学南广学院。原先是配音员，《搞笑漫画日和》配音团队cucn201的主要成员之一。2013年因出演
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/09/无聊的锤锤/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -440,7 +454,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T20:48:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:45:45+08:00">
                 2018-06-09
               </time>
             
@@ -453,6 +467,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/09/Hello World/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/09/Hello World/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -480,8 +505,15 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello, World!&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          123456#include &lt;stdio.h&gt;int main()&#123;    printf(&quot;Hello, World!&quot;);    return 0;&#1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/09/Hello World/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -759,6 +791,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://Bubbleioa.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -774,10 +814,6 @@
 
 
 
-  
-
-
-
 
 
 
@@ -808,5 +844,6 @@
 
   
 
-</body>
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
 </html>
