@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[Spoj GSS3]Can you answer these queries III 未完成]]></title>
+    <url>%2F2018%2F06%2F15%2F%5BSpoj%20GSS3%5DCan%20you%20answer%20these%20queries%20III%2F</url>
+    <content type="text"><![CDATA[题目题目描述给定长度为N的数列A，以及M条指令 (N≤500000, M≤100000)，每条指令可能是以下两种之一：“2 x y”，把 A[x] 改成 y。“1 x y”，查询区间 [x,y] 中的最大连续子段和，即 max(x≤l≤r≤y)⁡ { ∑(i=l~r) A[i] }。对于每个询问，输出一个整数表示答案。 输入第一行两个整数N,M 第二行N个整数Ai 接下来M行每行3个整数k,x,y，k=1表示查询（此时如果x&gt;y，请交换x,y），k=2表示修改 输出对于每个询问输出一个整数表示答案。 样例输入123455 31 2 -3 4 51 2 32 2 -11 3 2 样例输出122-1 提示数据范围与约定 对于100%的数据: N≤500000, M≤100000, |Ai|&lt;=1000 题解这道题与原题略微有点区别，数据输入顺序不一样，以及范围更大了，但是稍微改一下就可以过了。 这道题比较适合对于线段树有基础的人刷刷，因为要有比较扎实的基础才能写出区间和的写法。 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;#define MAXN 500000struct Ttree&#123; int data; int ldata,rdata; int sum; &#125;t[MAXN*4],tmp0;int n,m;void push_up(int l,int r,int k)&#123; t[k].sum=t[k*2].sum+t[k*2+1].sum; t[k].data=max(t[k*2].data,t[k*2+1].data); t[k].data=max(t[k*2].rdata+t[k*2+1].ldata,t[k].data); t[k].ldata=max(t[k*2].ldata,t[k*2].sum+t[k*2+1].ldata); t[k].rdata=max(t[k*2+1].rdata,t[k*2+1].sum+t[k*2].rdata); return;&#125;void make(int l,int r,int k)&#123; if(l==r)&#123; scanf("%d",&amp;t[k].data); t[k].ldata=t[k].rdata=t[k].sum=t[k].data; return; &#125; int mid=(l+r)/2; make(l,mid,k*2); make(mid+1,r,k*2+1); push_up(l,r,k); return;&#125;Ttree ask(int L,int R,int l,int r,int k)&#123; if(L&lt;=l&amp;&amp;r&lt;=R)return t[k]; int mid=(l+r)/2; Ttree res1; if(L&lt;=mid)res1=ask(L,R,l,mid,k*2); else res1=tmp0; Ttree res2; if(R&gt;mid)res2=ask(L,R,mid+1,r,k*2+1); else res2=tmp0; Ttree res=&#123;0&#125;; res.sum=res1.sum+res2.sum; res.data=max(res1.data,res2.data); res.data=max(res1.rdata+res2.ldata,res.data); res.ldata=max(res1.ldata,res1.sum+res2.ldata); res.rdata=max(res2.rdata,res2.sum+res1.rdata); return res;&#125;void change(int x,int y,int l,int r,int k)&#123; if(l==r)&#123; t[k].data=y; t[k].ldata=t[k].rdata=t[k].sum=t[k].data; return; &#125; int mid=(r+l)/2; if(x&lt;=mid)change(x,y,l,mid,k*2); else change(x,y,mid+1,r,k*2+1); push_up(l,r,k); return;&#125;int main()&#123; tmp0.data=tmp0.ldata=tmp0.rdata=-1e9; scanf("%d%d",&amp;n,&amp;m); make(1,n,1); for(int i=1;i&lt;=m;i++)&#123; int k,x,y; scanf("%d%d%d",&amp;k,&amp;x,&amp;y); if(k==1)&#123; if(x&gt;y)swap(x,y); printf("%d\n",ask(x,y,1,n,1).data); &#125;else&#123; change(x,y,1,n,1); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>树</category>
+        <category>线段树</category>
+      </categories>
+      <tags>
+        <tag>区间求和</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[六度空间]]></title>
     <url>%2F2018%2F06%2F11%2F%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4%2F</url>
     <content type="text"><![CDATA[题目题目描述“六度空间”理论又称作“六度分隔（Six Degrees of Separation）”理论。这个理论可以通俗地阐述为：“你和任何一个陌生人之间所间隔的人不会超过六个，也就是说，最多通过五个人你就能够认识任何一个陌生人。”如下图所示。六度空间”理论虽然得到广泛的认同，并且正在得到越来越多的应用。但是数十年来，试图验证这个理论始终是许多社会学家努力追求的目标。然而由于历史的原因，这样的研究具有太大的局限性和困难。随着当代人的联络主要依赖于电话、短信、微信以及因特网上即时通信等工具，能够体现社交网络关系的一手数据已经逐渐使得“六度空间”理论的验证成为可能。 假如给你一个社交网络图，请你对每个节点计算符合“六度空间”理论的结点占结点总数的百分比。 输入格式输入第1行给出两个正整数，分别表示社交网络图的结点数N（1&lt;N≤10000，表示人数）、边数M（≤33×N，表示社交关系数）。随后的M行对应M条边，每行给出一对正整数，分别是该条边直接连通的两个结点的编号（节点从1到N编号）。 输出格式对每个结点输出与该结点距离不超过6的结点数占结点总数的百分比，精确到小数点后2位。每个结节点输出一行，格式为“结点编号:（空格）百分比%”。 输入样例1234567891010 91 22 33 44 55 66 77 88 99 10 输出样例123456789101: 70.00%2: 80.00%3: 90.00%4: 100.00%5: 100.00%6: 100.00%7: 100.00%8: 90.00%9: 80.00%10: 70.00% 题解简单的一道图的遍历题，这里我用的是bfs（感觉这道题用bfs更简单），超过6次就跳出，这里有一个重点就是如何在队列里判断一轮结束，具体看代码。 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;#define MAXN 10001bool a[MAXN][MAXN];//这里可以扣一点开个boolbool visited[MAXN];//用来标记访问过的点，注意重置int n,m;int bfs(int v)&#123; int que[MAXN]; int head=1,tail=1; int step=1,last=v;//last存放上一个点访问的最后一个点 int tmp; int count; visited[v]=1; count=1; que[tail++]=v; while(head&lt;tail)&#123; int out=que[head++];//出队元素 for(int i=1;i&lt;=n;i++)&#123; if(visited[i])continue; if(a[out][i])&#123; visited[i]=1; que[tail++]=i; count++; tmp=i;//不断更新，最后访问的点被tmp存到 &#125; &#125; if(out==last)&#123;//如果出队元素等于上个点最后访问的点 step++;//说明这一轮结束，step++，last更新为tmp last=tmp; &#125; if(step==7)break; &#125; return count;&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;m); for(int i=1;i&lt;=m;i++)&#123; int x,y; scanf("%d%d",&amp;x,&amp;y); a[x][y]=a[y][x]=1;//无向图 &#125; for(int i=1;i&lt;=n;i++)&#123;//从每个点开始 memset(visited,0,sizeof(visited));//每次要重置visited double ratio; ratio=bfs(i)*1.0/n*100; printf("%d: %.2f%%\n",i,ratio);//用%%转义字符输出% &#125; return 0;&#125;]]></content>
@@ -11,6 +23,18 @@
       <tags>
         <tag>bfs</tag>
         <tag>邻接矩阵</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[YZOJ1370]无聊的锤锤]]></title>
+    <url>%2F2018%2F06%2F09%2F%5BYZOJ1370%5D%E6%97%A0%E8%81%8A%E7%9A%84%E9%94%A4%E9%94%A4%2F</url>
+    <content type="text"><![CDATA[题目题目描述罗宏明（白客），1988年7月9日出生于中国山东省泰安市，中国内地新生代男演员，毕业于中国传媒大学南广学院。原先是配音员，《搞笑漫画日和》配音团队cucn201的主要成员之一。2013年因出演导演叫兽易小星的搞笑网剧《万万没想到》中的男一号“王大锤”，从而备受关注。 这么火的搞笑剧中，大家是否注意到这样一个剧情(没看过也没关系的)：王大锤要回家过年，上司不让，无奈之下，王大锤就发挥了自己的聪明才智，决定和上司玩个游戏，想着锤锤是个数学白痴，上司欣然答应，胜了就让他回家。游戏是这样的,开始时，白板上有两个不等的整数，他们轮流行动，每次行动必须在白板上写出任意两个已在白板上出现的整数的差且非负，而且这个数字必须是新的，谁再也写不出来就输了。 为了彰显上司魅力，上司让锤锤先开始。上司足够聪明，当然王大锤也不笨，不然会这么火吗？如果你事先知道白板上的数字，聪明的你能推理出王大锤能否回家呢？ 输入测试数据有多组，每组有两个整数，即白板上最初的数字，数据保证在int范围内。 输出每组测试数据输出一行，锤锤能回家就输出“1”，不能输出“0”。 样例输入125 34 8 样例输出1210 题解一开始还打算用暴力，写到一般就打消了这个念头。其实显而易见的是，对于正整数n,m来说,这两个数相减可以得出的所有数x,则 代码12345678910111213141516171819#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int gcd(int a,int b)&#123; return b==0?a:gcd(b,a%b);&#125;int main()&#123; int n,m; while(scanf("%d%d",&amp;n,&amp;m)!=EOF)&#123; int num=gcd(n,m); int c1=n/num;//看它最多能写几个数 int c2=m/num; if(c1&gt;c2)printf("%d\n",c1%2); else printf("%d\n",c2%2); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+        <category>最小公倍数与最大公因数</category>
+      </categories>
+      <tags>
+        <tag>欧几里得算法</tag>
       </tags>
   </entry>
   <entry>
