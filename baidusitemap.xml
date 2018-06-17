@@ -4,22 +4,50 @@
 
     
   <url>
-    <loc>https://bubbleioa.github.io/2018/06/16/%5BPOJ-3264%5D%20Balanced%20Lineup/</loc>
-    <lastmod>2018-06-16T10:44:07.709Z</lastmod>
+    <loc>https://bubbleioa.github.io/2018/06/17/%5B%E6%B4%9B%E8%B0%B7P2820%5D%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
+    <lastmod>2018-06-17T08:00:36.605Z</lastmod>
     <data>
         <display>
-        <title>[POJ-3264] Balanced Lineup</title>
-        <pubTime>2018-06-16T10:30:00.000Z</pubTime>
+        <title>[洛谷P2820]局域网</title>
+        <pubTime>2018-06-17T10:43:34.000Z</pubTime>
         
-        <tag>ST算法</tag>
+        <tag>kruskal</tag>
+         
+        <tag>并查集</tag>
          
          
            
              
-              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E6%A0%91/"/>
+              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
           
              
-              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/"/>
+          
+             
+              <breadCrumb title="最小生成树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://bubbleioa.github.io/2018/06/17/%5B%E6%B4%9B%E8%B0%B7P1908%5D%E9%80%86%E5%BA%8F%E5%AF%B9/</loc>
+    <lastmod>2018-06-17T07:58:58.325Z</lastmod>
+    <data>
+        <display>
+        <title>[洛谷P1908]逆序对</title>
+        <pubTime>2018-06-17T10:30:00.000Z</pubTime>
+        
+        <tag>离散化</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="树状数组" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
           
         </display>
     </data>
@@ -28,7 +56,7 @@
     
   <url>
     <loc>https://bubbleioa.github.io/2018/06/15/%5BSpoj%20GSS3%5DCan%20you%20answer%20these%20queries%20III/</loc>
-    <lastmod>2018-06-16T04:17:18.835Z</lastmod>
+    <lastmod>2018-06-17T07:54:20.679Z</lastmod>
     <data>
         <display>
         <title>[Spoj GSS3]Can you answer these queries III</title>
@@ -39,10 +67,39 @@
          
            
              
-              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E6%A0%91/"/>
+              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
           
              
-              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/"/>
+          
+             
+              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://bubbleioa.github.io/2018/06/16/%5BPOJ-3264%5D%20Balanced%20Lineup/</loc>
+    <lastmod>2018-06-17T07:53:39.078Z</lastmod>
+    <data>
+        <display>
+        <title>[POJ-3264] Balanced Lineup</title>
+        <pubTime>2018-06-16T10:30:00.000Z</pubTime>
+        
+        <tag>ST表</tag>
+         
+         
+           
+             
+              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/"/>
+          
+             
+              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
           
         </display>
     </data>
