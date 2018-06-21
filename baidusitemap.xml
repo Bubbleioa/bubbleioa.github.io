@@ -4,8 +4,80 @@
 
     
   <url>
+    <loc>https://bubbleioa.github.io/2018/06/21/%5BHAOI2006%5D%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E7%89%9B/</loc>
+    <lastmod>2018-06-21T14:43:16.430Z</lastmod>
+    <data>
+        <display>
+        <title>[HAOI2006]受欢迎的牛</title>
+        <pubTime>2018-06-21T14:30:00.000Z</pubTime>
+        
+        <tag>tarjan</tag>
+         
+         
+           
+             
+              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="图的连通" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://bubbleioa.github.io/2018/06/17/%5B%E6%B4%9B%E8%B0%B7P1908%5D%E9%80%86%E5%BA%8F%E5%AF%B9/</loc>
+    <lastmod>2018-06-17T11:46:42.739Z</lastmod>
+    <data>
+        <display>
+        <title>[洛谷P1908]逆序对</title>
+        <pubTime>2018-06-17T10:30:00.000Z</pubTime>
+        
+        <tag>离散化</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="树状数组" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://bubbleioa.github.io/2018/06/16/%5BPOJ-3264%5D%20Balanced%20Lineup/</loc>
+    <lastmod>2018-06-17T11:16:26.061Z</lastmod>
+    <data>
+        <display>
+        <title>[POJ-3264] Balanced Lineup</title>
+        <pubTime>2018-06-16T10:30:00.000Z</pubTime>
+        
+        <tag>ST表</tag>
+         
+         
+           
+             
+              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/"/>
+          
+             
+              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://bubbleioa.github.io/2018/06/17/%5B%E6%B4%9B%E8%B0%B7P2820%5D%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
-    <lastmod>2018-06-17T08:00:36.605Z</lastmod>
+    <lastmod>2018-06-17T11:15:39.629Z</lastmod>
     <data>
         <display>
         <title>[洛谷P2820]局域网</title>
@@ -32,29 +104,6 @@
 
     
   <url>
-    <loc>https://bubbleioa.github.io/2018/06/17/%5B%E6%B4%9B%E8%B0%B7P1908%5D%E9%80%86%E5%BA%8F%E5%AF%B9/</loc>
-    <lastmod>2018-06-17T07:58:58.325Z</lastmod>
-    <data>
-        <display>
-        <title>[洛谷P1908]逆序对</title>
-        <pubTime>2018-06-17T10:30:00.000Z</pubTime>
-        
-        <tag>离散化</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="树状数组" url="https://bubbleioa.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://bubbleioa.github.io/2018/06/15/%5BSpoj%20GSS3%5DCan%20you%20answer%20these%20queries%20III/</loc>
     <lastmod>2018-06-17T07:54:20.679Z</lastmod>
     <data>
@@ -63,32 +112,6 @@
         <pubTime>2018-06-15T14:00:00.000Z</pubTime>
         
         <tag>区间求和</tag>
-         
-         
-           
-             
-              <breadCrumb title="图论" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/"/>
-          
-             
-              <breadCrumb title="线段树" url="https://bubbleioa.github.io/categories/%E5%9B%BE%E8%AE%BA/%E6%A0%91/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://bubbleioa.github.io/2018/06/16/%5BPOJ-3264%5D%20Balanced%20Lineup/</loc>
-    <lastmod>2018-06-17T07:53:39.078Z</lastmod>
-    <data>
-        <display>
-        <title>[POJ-3264] Balanced Lineup</title>
-        <pubTime>2018-06-16T10:30:00.000Z</pubTime>
-        
-        <tag>ST表</tag>
          
          
            
