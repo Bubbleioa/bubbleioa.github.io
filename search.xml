@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[洛谷P1049]装箱问题]]></title>
+    <url>%2F2018%2F07%2F04%2F%5B%E6%B4%9B%E8%B0%B7P1049%5D%E8%A3%85%E7%AE%B1%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[题目题目描述有一个箱子容量为 V （正整数，$ 0 &lt;= V &lt;=20000 $），同时有 n 个物品（ $ 0&lt;n&lt;=30 $ ，每个物品有一个体积（正整数）。 要求 nn 个物品中，任取若干个装入箱内，使箱子的剩余空间为最小。注：此问题区分大小写 输入格式1 个整数，表示箱子容量 1 个整数，表示有 n 个物品 接下来 n 行，分别表示这 n 个物品的各自体积 输出格式1个整数，表示箱子剩余空间。 样例输入123456782468312797 样例输出10 来源NOIp2001普及组 第4题 题解代码1234567891011121314151617181920#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int n,v;int w[31];int f[20001];int main()&#123; scanf("%d%d",&amp;v,&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;w[i]); &#125; for(int i=1;i&lt;=n;i++)&#123; for(int j=v;j&gt;=w[i];j--)&#123; f[j]=max(f[j],f[j-w[i]]+w[i]); &#125; &#125; printf("%d",v-f[v]); return 0;&#125;]]></content>
+      <categories>
+        <category>动态规划</category>
+        <category>背包</category>
+      </categories>
+      <tags>
+        <tag>01背包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[洛谷P1435]回文字串]]></title>
+    <url>%2F2018%2F07%2F04%2F%5B%E6%B4%9B%E8%B0%B7P1435%5D%E5%9B%9E%E6%96%87%E5%AD%97%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[题目题目描述回文词是一种对称的字符串。任意给定一个字符串，通过插入若干字符，都可以变成回文词。此题的任务是，求出将给定字符串变成回文词所需要插入的最少字符数。 比如 “Ab3bd”插入2个字符后可以变成回文词“dAb3bAd”或“Adb3bdA”，但是插入少于2个的字符无法变成回文词。 注：此问题区分大小写 输入格式一个字符串(0&lt;strlen&lt;=1000) 输出格式有且只有一个整数，即最少插入字符数 样例输入1Ab3bd 样例输出12 来源IOI2000第一题 题解这里有个易错点，关于strlen函数的。 strlen()函数其实就是个计数器，它会从字符串开头，到终止符结束，最后返回结果。 但是，有些时候我们为了方便，会在读入字符串的时候使用scanf(“%s”,a+1)这时候，strlen(a)的返回值一定是0，因为a字符串的开头就是终止符，正确做法strlen(a+1) 代码123456789101112131415161718192021#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;using namespace std;char str[5001];int n;int f[5001][5001];int main()&#123; cin&gt;&gt;str+1; n=strlen(str+1); for(int len=1;len&lt;=n;len++)&#123; for(int i=1;i&lt;=n-len+1;i++)&#123; int j=i+len-1; if(str[i]==str[j])f[i][j]=f[i+1][j-1]; else f[i][j]=min(f[i+1][j],f[i][j-1])+1; &#125; &#125; printf("%d",f[1][n]); return 0;&#125;]]></content>
+      <categories>
+        <category>动态规划</category>
+      </categories>
+      <tags>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[hdu1114]猪猪储蓄罐]]></title>
     <url>%2F2018%2F07%2F03%2F%5BYZOJ1582%5D%E7%8C%AA%E7%8C%AA%E5%82%A8%E8%93%84%E7%BD%90%2F</url>
     <content type="text"><![CDATA[我写的是单输入版本，改一下应该不会超时 题目题目描述Before ACM can do anything, a budget must be prepared and the necessary financial support obtained. The main income for this action comes from Irreversibly Bound Money (IBM). The idea behind is simple. Whenever some ACM member has any small money, he takes all the coins and throws them into a piggy-bank. You know that this process is irreversible, the coins cannot be removed without breaking the pig. After a sufficiently long time, there should be enough cash in the piggy-bank to pay everything that needs to be paid. But there is a big problem with piggy-banks. It is not possible to determine how much money is inside. So we might break the pig into pieces only to find out that there is not enough money. Clearly, we want to avoid this unpleasant situation. The only possibility is to weigh the piggy-bank and try to guess how many coins are inside. Assume that we are able to determine the weight of the pig exactly and that we know the weights of all coins of a given currency. Then there is some minimum amount of money in the piggy-bank that we can guarantee. Your task is to find out this worst case and determine the minimum amount of cash inside the piggy-bank. We need your help. No more prematurely broken pigs! 输入格式The input consists of T test cases. The number of them (T) is given on the first line of the input file. Each test case begins with a line containing two integers E and F. They indicate the weight of an empty pig and of the pig filled with coins. Both weights are given in grams. No pig will weigh more than 10 kg, that means 1 &lt;= E &lt;= F &lt;= 10000. On the second line of each test case, there is an integer number N (1 &lt;= N &lt;= 500) that gives the number of various coins used in the given currency. Following this are exactly N lines, each specifying one coin type. These lines contain two integers each, Pand W (1 &lt;= P &lt;= 50000, 1 &lt;= W &lt;=10000). P is the value of the coin in monetary units, W is it’s weight in grams. 输出格式Print exactly one line of output for each test case. The line must contain the sentence “The minimum amount of money in the piggy-bank is X.” where X is the minimum amount of money that can be achieved using coins with the given total weight. If the weight cannot be reached exactly, print a line “This is impossible.”. 样例输入12345678910111213310 11021 130 5010 11021 150 301 6210 320 4 样例输出123The minimum amount of money in the piggy-bank is 60.The minimum amount of money in the piggy-bank is 100.This is impossible. 来源Central Europe 1999 题解代码12345678910111213141516171819202122232425262728#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int e,F,s;int n;int p[10001],w[10001];int f[10001];const int inf=0x3f3f3f3f;int main()&#123; scanf("%d%d",&amp;e,&amp;F); s=F-e; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d%d",&amp;p[i],&amp;w[i]); f[i]=inf; &#125; f[0]=0; for(int i=1;i&lt;=s;i++)f[i]=inf; for(int i=1;i&lt;=n;i++)&#123; for(int v=w[i];v&lt;=s;v++)&#123; f[v]=min(f[v],f[v-w[i]]+p[i]); &#125; &#125; if(f[s]==inf)printf("This is impossible."); else printf("The minimum amount of money in the piggy-bank is %d.",f[s]); return 0;&#125;]]></content>
