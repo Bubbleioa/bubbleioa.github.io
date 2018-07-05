@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[洛谷P1880][NOI1995]石子合并]]></title>
+    <url>%2F2018%2F07%2F05%2F%5B%E6%B4%9B%E8%B0%B7P1880%5D%5BNOI1995%5D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%2F</url>
+    <content type="text"><![CDATA[题目题目描述在一个圆形操场的四周摆放N堆石子,现要将石子有次序地合并成一堆.规定每次只能选相邻的2堆合并成新的一堆，并将新的一堆的石子数，记为该次合并的得分。 试设计出1个算法,计算出将N堆石子合并成1堆的最小得分和最大得分. 输入格式数据的第1行试正整数N,1≤N≤100,表示有N堆石子.第2行有N个数,分别表示每堆石子的个数. 输出格式输出共2行,第1行为最小得分,第2行为最大得分. 样例输入1244 5 9 4 样例输出124354 题解代码123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#define MAXN 402using namespace std;int fmin[MAXN][MAXN];int sum[MAXN];int fmax[MAXN][MAXN];int n;int main()&#123; memset(fmin,0x3f,sizeof(fmin)); memset(fmax,0,sizeof(fmax)); scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; int a; scanf("%d",&amp;a); fmin[i][i]=0; fmin[i+n][i+n]=0; sum[i]=sum[i-1]+a; &#125; for(int i=1;i&lt;=n;i++)&#123; sum[i+n]=sum[n]+sum[i]; &#125; for(int len=2;len&lt;=n;len++)&#123; for(int i=1;i&lt;=n+n-len+1;i++)&#123; int j=i+len-1; for(int k=i;k&lt;j;k++)&#123; fmax[i][j]=max(fmax[i][j],fmax[i][k]+fmax[k+1][j]+sum[j]-sum[i-1]); fmin[i][j]=min(fmin[i][j],fmin[i][k]+fmin[k+1][j]+sum[j]-sum[i-1]); &#125; &#125; &#125; int minn=1&lt;&lt;30; int maxx=0; for(int i=1;i&lt;=n;i++)&#123; minn=min(minn,fmin[i][i+n-1]); maxx=max(maxx,fmax[i][i+n-1]); &#125; printf("%d\n%d",minn,maxx); return 0;&#125;]]></content>
+      <categories>
+        <category>动态规划</category>
+      </categories>
+      <tags>
+        <tag>环状dp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[洛谷P1049]装箱问题]]></title>
     <url>%2F2018%2F07%2F04%2F%5B%E6%B4%9B%E8%B0%B7P1049%5D%E8%A3%85%E7%AE%B1%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[题目题目描述有一个箱子容量为 V （正整数，$ 0 &lt;= V &lt;=20000 $），同时有 n 个物品（ $ 0&lt;n&lt;=30 $ ，每个物品有一个体积（正整数）。 要求 nn 个物品中，任取若干个装入箱内，使箱子的剩余空间为最小。注：此问题区分大小写 输入格式1 个整数，表示箱子容量 1 个整数，表示有 n 个物品 接下来 n 行，分别表示这 n 个物品的各自体积 输出格式1个整数，表示箱子剩余空间。 样例输入123456782468312797 样例输出10 来源NOIp2001普及组 第4题 题解代码1234567891011121314151617181920#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int n,v;int w[31];int f[20001];int main()&#123; scanf("%d%d",&amp;v,&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;w[i]); &#125; for(int i=1;i&lt;=n;i++)&#123; for(int j=v;j&gt;=w[i];j--)&#123; f[j]=max(f[j],f[j-w[i]]+w[i]); &#125; &#125; printf("%d",v-f[v]); return 0;&#125;]]></content>
