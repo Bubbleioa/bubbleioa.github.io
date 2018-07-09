@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[poj1845]Sumdiv]]></title>
+    <url>%2F2018%2F07%2F09%2F%5Bpoj1845%5DSumdiv%2F</url>
+    <content type="text"><![CDATA[题目题目描述Consider two natural numbers A and B. Let S be the sum of all natural divisors of A^B. Determine S modulo 9901 (the rest of the division of S by 9901). 输入The only line contains the two natural numbers A and B, (0 &lt;= A,B &lt;= 50000000)separated by blanks. 输出The only line of the output will contain S modulo 9901. 样例输入12 3 样例输出115 提示$ 2^3 = 8. $The natural divisors of 8 are: 1,2,4,8. Their sum is 15.15 modulo 9901 is 15 (that should be output). 来源Romania OI 2002 传送门Sumdiv 题解代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;using namespace std;#define MAXN 50001const int MOD=9901;long long a,b;long long p[MAXN],c[MAXN];long long m;long long ans; long long pow(long long p,long long n)&#123; long long sq=1; while(n)&#123; if(n&amp;1)sq=(sq*p)%MOD; n&gt;&gt;=1; p=(p*p)%MOD; &#125; return sq; &#125; bool prime(int n)&#123; if(n&lt;2)return 0; for(int i=2;i&lt;=sqrt(n);i++)&#123; if(n%i==0)return 0; &#125; return 1;&#125; void divide(int n)&#123; m=0; for(int i=2;i&lt;=sqrt(n);i++)&#123; if(n%i==0&amp;&amp;prime(i))&#123; p[++m]=i,c[m]=0; while(n%i==0)n/=i,c[m]++; &#125; &#125; if(n&gt;1&amp;&amp;prime(n))p[++m]=n,c[m]=1; return;&#125; long long sum(long long p,long long c)&#123; if(c==0)return 1; if(c%2==0)return (sum(p,c/2-1)*(1+pow(p,c/2+1))+pow(p,c/2))%MOD; else return (sum(p,c/2)*(1+pow(p,c/2+1)))%MOD;&#125; void work()&#123; ans=1; for(int i=1;i&lt;=m;i++)&#123; ans=(ans*sum(p[i],c[i]*b)%MOD)%MOD; &#125;&#125; int main()&#123; cin&gt;&gt;a&gt;&gt;b; divide(a); work(); printf("%lld",ans); return 0;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数论</category>
+      </categories>
+      <tags>
+        <tag>快速幂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[poj3263]Tallest Cow]]></title>
+    <url>%2F2018%2F07%2F09%2F%5Bpoj3263%5DTallest%20Cow%2F</url>
+    <content type="text"><![CDATA[题目题目描述FJ’s N (1 ≤ N ≤ 10,000) cows conveniently indexed 1..N are standing in a line. Each cow has a positive integer height (which is a bit of secret). You are told only the height H (1 ≤ H ≤ 1,000,000) of the tallest cow along with the index I of that cow. FJ has made a list of R (0 ≤ R ≤ 10,000) lines of the form “cow 17 sees cow 34”. This means that cow 34 is at least as tall as cow 17, and that every cow between 17 and 34 has a height that is strictly smaller than that of cow 17. For each cow from 1..N, determine its maximum possible height, such that all of the information given is still correct. It is guaranteed that it is possible to satisfy all the constraints. 输入Line 1: Four space-separated integers: N, I, H and RLines 2..R+1: Two distinct space-separated integers A and B (1 ≤ A, B ≤ N), indicating that cow A can see cow B. 输出Lines 1..N: Line i contains the maximum possible height of cow i. 输入样例1234569 3 5 51 35 34 33 79 8 输出样例123456789545344555 来源USACO 2007 January Silver 传送门Tallest Cow 题解代码12345678910111213141516171819202122232425262728#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;map&gt;using namespace std;int d[100001];unsigned int s[100001];int n,i,h,r;int x,y;map&lt;pair&lt;int,int&gt;,bool&gt; judge; int main()&#123; scanf("%d%d%d%d",&amp;n,&amp;i,&amp;h,&amp;r); d[1]=h; for(int i=1;i&lt;=r;i++)&#123; scanf("%d%d",&amp;x,&amp;y); if(x&gt;y)swap(x,y); if(judge[make_pair(x,y)])continue; d[x+1]--,d[y]++; judge[make_pair(x,y)]=1; &#125; for(int i=1;i&lt;=n;i++)&#123; s[i]=s[i-1]+d[i]; &#125; for(int i=1;i&lt;=n;i++)&#123; printf("%d\n",s[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[HNOI2003]激光炸弹]]></title>
+    <url>%2F2018%2F07%2F09%2F%5BHNOI2003%5D%E6%BF%80%E5%85%89%E7%82%B8%E5%BC%B9%2F</url>
+    <content type="text"><![CDATA[题目题目描述一种新型的激光炸弹，可以摧毁一个边长为R的正方形内的所有的目标。现在地图上有n(N&lt;=10000)个目标，用整数Xi,Yi(其值在[0,5000])表示目标在地图上的位置，每个目标都有一个价值。激光炸弹的投放是通过卫星定位的，但其有一个缺点，就是其爆破范围，即那个边长为R的正方形的边必须和x，y轴平行。若目标位于爆破正方形的边上，该目标将不会被摧毁。 输入输入文件的第一行为正整数n和正整数R，接下来的n行每行有3个正整数，分别表示xi,yi,vi 输出输出文件仅有一个正整数，表示一颗炸弹最多能炸掉地图上总价值为多少的目标（结果不会超过32767）。 输入样例1232 10 0 11 1 1 输出样例11 题解代码12345678910111213141516171819202122232425262728#include&lt;iostream&gt;#include&lt;cstdio&gt;using namespace std;int n,R;int a[5002][5002];int ans; int main()&#123; cin&gt;&gt;n&gt;&gt;R; for(int i=1;i&lt;=n;i++)&#123; int x,y,num; scanf("%d%d%d",&amp;x,&amp;y,&amp;num); a[y+1][x+1]=num; &#125; for(int i=1;i&lt;=5001;i++)&#123; for(int j=1;j&lt;=5001;j++)&#123; a[i][j]+=a[i-1][j]+a[i][j-1]-a[i-1][j-1]; &#125; &#125; for(int i=R;i&lt;=5001;i++)&#123; for(int j=R;j&lt;=5001;j++)&#123; int tmp=a[i][j]-a[i-R][j]-a[i][j-R]+a[i-R][j-R]; if(ans&lt;tmp)ans=tmp; &#125; &#125; cout&lt;&lt;ans; return 0;&#125;]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>前缀和</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[洛谷P1880][NOI1995]石子合并]]></title>
     <url>%2F2018%2F07%2F05%2F%5B%E6%B4%9B%E8%B0%B7P1880%5D%5BNOI1995%5D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%2F</url>
     <content type="text"><![CDATA[题目题目描述在一个圆形操场的四周摆放N堆石子,现要将石子有次序地合并成一堆.规定每次只能选相邻的2堆合并成新的一堆，并将新的一堆的石子数，记为该次合并的得分。 试设计出1个算法,计算出将N堆石子合并成1堆的最小得分和最大得分. 输入格式数据的第1行试正整数N,1≤N≤100,表示有N堆石子.第2行有N个数,分别表示每堆石子的个数. 输出格式输出共2行,第1行为最小得分,第2行为最大得分. 样例输入1244 5 9 4 样例输出124354 题解代码123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#define MAXN 402using namespace std;int fmin[MAXN][MAXN];int sum[MAXN];int fmax[MAXN][MAXN];int n;int main()&#123; memset(fmin,0x3f,sizeof(fmin)); memset(fmax,0,sizeof(fmax)); scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; int a; scanf("%d",&amp;a); fmin[i][i]=0; fmin[i+n][i+n]=0; sum[i]=sum[i-1]+a; &#125; for(int i=1;i&lt;=n;i++)&#123; sum[i+n]=sum[n]+sum[i]; &#125; for(int len=2;len&lt;=n;len++)&#123; for(int i=1;i&lt;=n+n-len+1;i++)&#123; int j=i+len-1; for(int k=i;k&lt;j;k++)&#123; fmax[i][j]=max(fmax[i][j],fmax[i][k]+fmax[k+1][j]+sum[j]-sum[i-1]); fmin[i][j]=min(fmin[i][j],fmin[i][k]+fmin[k+1][j]+sum[j]-sum[i-1]); &#125; &#125; &#125; int minn=1&lt;&lt;30; int maxx=0; for(int i=1;i&lt;=n;i++)&#123; minn=min(minn,fmin[i][i+n-1]); maxx=max(maxx,fmax[i][i+n-1]); &#125; printf("%d\n%d",minn,maxx); return 0;&#125;]]></content>
