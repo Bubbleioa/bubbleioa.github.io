@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2018NOI导刊被虐记]]></title>
+    <url>%2F2018%2F07%2F18%2F2018NOI%E5%AF%BC%E5%88%8A%E8%A2%AB%E8%99%90%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[序言过程Day0好像我是比较晚和大家在火车站集合的，为了一个舒适的路程，特意买的是高铁票（为此还放弃了直达票）高铁上还是比较舒适的，有电有网有吃，十几个人把电脑打开，俨然一个高档网吧（误） Day1Day2Day3Day4Day5Day6Day7Day8后记]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[B君的病症]]></title>
+    <url>%2F2018%2F07%2F17%2FB%E5%90%9B%E7%9A%84%E7%97%85%E7%97%87%2F</url>
+    <content type="text"><![CDATA[题目题目描述享国之日浅，国家无事。B 君看到了 Z 君的第二题，觉得很难。 于是自己出了一个简单题。 大 A 是一名强迫症患者，现在他要给一群带颜色的珠子排成一列，现在有 n 种颜色，其中第 i 种颜色的珠子有 ai 个。要求排列中第 i 种颜色珠子的所有珠子，一定要排在第 i + 1 种颜色的第一个和最后一个珠子之间。问有多少种排列珠子的方案，因为方案数会很大，所以请输出答案对1000000007 取模之后的结果。 输入格式第一行一个整数 n。 以下 n 行，每行一个整数 ai。 输出格式一行一个整数表示答案。 输入样例12343244 输出样例1168 说明对于 100% 的数据，满足 1 ≤ n ≤ 10^4 , 2 ≤ ai ≤ 15。 对于 70% 的数据，满足 1 ≤ n ≤ 10^2。 题解代码1234567891011121314151617181920212223242526272829303132333435363738394041424344#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;#define MOD 1000000007#define MAXN 100001long long fact[MAXN],inv[MAXN];long long pow(long long a,long long b)&#123; long long ans=1; while(b)&#123; if(b&amp;1)ans=a*ans%MOD; a=a*a%MOD; b&gt;&gt;=1; &#125; return ans%MOD;&#125;long long c(long long m,long long n)&#123; return fact[m]*inv[n]%MOD*inv[m-n]%MOD;&#125;void pre()&#123; fact[0]=1; inv[0]=1; for(int i=1;i&lt;MAXN;i++)&#123; fact[i]=fact[i-1]*i%MOD; inv[i]=pow(fact[i],MOD-2); &#125;&#125;int main()&#123; long long x,y; pre(); cin&gt;&gt;x; long long z=1; int s=0; for(int i=1;i&lt;=x;i++)&#123; scanf("%lld",&amp;y); z=z*c(s+y-2,y-2)%MOD; s+=y; &#125; cout&lt;&lt;z; return 0;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+        <category>组合数学</category>
+      </categories>
+      <tags>
+        <tag>逆元</tag>
+        <tag>组合数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[poj1845]Sumdiv]]></title>
     <url>%2F2018%2F07%2F09%2F%5Bpoj1845%5DSumdiv%2F</url>
     <content type="text"><![CDATA[题目题目描述Consider two natural numbers A and B. Let S be the sum of all natural divisors of A^B. Determine S modulo 9901 (the rest of the division of S by 9901). 输入The only line contains the two natural numbers A and B, (0 &lt;= A,B &lt;= 50000000)separated by blanks. 输出The only line of the output will contain S modulo 9901. 样例输入12 3 样例输出115 提示$ 2^3 = 8. $The natural divisors of 8 are: 1,2,4,8. Their sum is 15.15 modulo 9901 is 15 (that should be output). 来源Romania OI 2002 传送门Sumdiv 题解问题分析刚一看到这个题，一股浓浓的数论感就扑面而来，求$ A^B $的约数和，暴力当然是不可取的，我们不妨换个角度如果我们把$ A $分解质因数，表示为 $$ A=p_1^(c_1)p_2^(c_2)p_3^(c_3)…p_n^(c_n) $$ 那么$ A^B $可表示为$$ A=p_1^(Bc_1)p_2^(Bc_2)p_3^(Bc_3)…p_n^(Bc_n) $$则$ A^B $所有约数和为$$ (1+p_1+p_1^2+…+p_1^(Bc_1)) $$ 质因数分解代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;using namespace std;#define MAXN 50001const int MOD=9901;long long a,b;long long p[MAXN],c[MAXN];long long m;long long ans; long long pow(long long p,long long n)&#123; long long sq=1; while(n)&#123; if(n&amp;1)sq=(sq*p)%MOD; n&gt;&gt;=1; p=(p*p)%MOD; &#125; return sq;&#125; bool prime(int n)&#123; if(n&lt;2)return 0; for(int i=2;i&lt;=sqrt(n);i++)&#123; if(n%i==0)return 0; &#125; return 1;&#125; void divide(int n)&#123; m=0; for(int i=2;i&lt;=sqrt(n);i++)&#123; if(n%i==0&amp;&amp;prime(i))&#123; p[++m]=i,c[m]=0; while(n%i==0)n/=i,c[m]++; &#125; &#125; if(n&gt;1&amp;&amp;prime(n))p[++m]=n,c[m]=1; return;&#125; long long sum(long long p,long long c)&#123; if(c==0)return 1; if(c%2==0)return (sum(p,c/2-1)*(1+pow(p,c/2+1))+pow(p,c/2))%MOD; else return (sum(p,c/2)*(1+pow(p,c/2+1)))%MOD;&#125; void work()&#123; ans=1; for(int i=1;i&lt;=m;i++)&#123; ans=(ans*sum(p[i],c[i]*b)%MOD)%MOD; &#125;&#125; int main()&#123; cin&gt;&gt;a&gt;&gt;b; divide(a); work(); printf("%lld",ans); return 0;&#125;]]></content>
