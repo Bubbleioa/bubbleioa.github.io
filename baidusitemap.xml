@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://bubbleioa.github.io/2018/08/04/%5Bpoj2559%5DLargest%20Rectangle%20in%20a%20Histogram/</loc>
+    <lastmod>2018-08-14T07:12:11.159Z</lastmod>
+    <data>
+        <display>
+        <title>[poj2559]Largest Rectangle in a Histogram</title>
+        <pubTime>2018-08-03T17:17:01.000Z</pubTime>
+        
+        <tag>单调栈</tag>
+         
+         
+           
+             
+              <breadCrumb title="基本数据结构" url="https://bubbleioa.github.io/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="栈" url="https://bubbleioa.github.io/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://bubbleioa.github.io/2018/08/13/%5B%E6%B4%9B%E8%B0%B7P1445%5D%5BViolet%5D%E6%A8%B1%E8%8A%B1/</loc>
     <lastmod>2018-08-13T13:34:50.271Z</lastmod>
     <data>
@@ -104,29 +127,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://bubbleioa.github.io/2018/08/04/%5Bpoj2559%5DLargest%20Rectangle%20in%20a%20Histogram/</loc>
-    <lastmod>2018-08-04T11:51:09.062Z</lastmod>
-    <data>
-        <display>
-        <title>[poj2559]Largest Rectangle in a Histogram</title>
-        <pubTime>2018-08-03T17:17:01.000Z</pubTime>
-        
-        <tag>单调栈</tag>
-         
-         
-           
-             
-              <breadCrumb title="基本数据结构" url="https://bubbleioa.github.io/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="栈" url="https://bubbleioa.github.io/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/"/>
-          
         </display>
     </data>
     </url>
