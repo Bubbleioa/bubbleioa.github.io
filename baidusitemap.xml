@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://bubbleioa.github.io/2018/08/15/%5BUVA10140%5DPrime%20Distance/</loc>
+    <lastmod>2018-08-15T11:54:48.869Z</lastmod>
+    <data>
+        <display>
+        <title>[UVA10140]Prime Distance</title>
+        <pubTime>2018-08-15T13:17:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="数学" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+          
+             
+              <breadCrumb title="数论" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/%E6%95%B0%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://bubbleioa.github.io/2018/08/13/%5B%E6%B4%9B%E8%B0%B7P1445%5D%5BViolet%5D%E6%A8%B1%E8%8A%B1/</loc>
+    <lastmod>2018-08-15T11:20:54.702Z</lastmod>
+    <data>
+        <display>
+        <title>[洛谷P1445][Violet]樱花</title>
+        <pubTime>2018-08-13T13:17:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="数学" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+          
+             
+              <breadCrumb title="数论" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/%E6%95%B0%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://bubbleioa.github.io/2018/08/04/%5Bpoj2559%5DLargest%20Rectangle%20in%20a%20Histogram/</loc>
     <lastmod>2018-08-14T07:12:11.159Z</lastmod>
     <data>
@@ -20,24 +62,6 @@
           
              
               <breadCrumb title="栈" url="https://bubbleioa.github.io/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://bubbleioa.github.io/2018/08/13/%5B%E6%B4%9B%E8%B0%B7P1445%5D%5BViolet%5D%E6%A8%B1%E8%8A%B1/</loc>
-    <lastmod>2018-08-13T13:34:50.271Z</lastmod>
-    <data>
-        <display>
-        <title>[洛谷P1445][Violet]樱花</title>
-        <pubTime>2018-08-13T13:17:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="数学" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
           
         </display>
     </data>
