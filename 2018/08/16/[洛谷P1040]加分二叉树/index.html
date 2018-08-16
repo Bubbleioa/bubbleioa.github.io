@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="OI, 信息学奥赛" />
+  <meta name="keywords" content="中序遍历," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="OI竞赛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冒泡ioa">
-<meta property="og:url" content="https://bubbleioa.github.io/categories/基本数据结构/index.html">
+<meta name="description" content="题目题目描述设一个n个节点的二叉树tree的中序遍历为（l,2,3,…,n），其中数字1,2,3,…,n为节点编号。每个节点都有一个分数（均为正整数），记第j个节点的分数为di，tree及它的每个子树都有一个加分，任一棵子树subtree（也包含tree本身）的加分计算方法如下：    subtree的左子树的加分× subtree的右子树的加分＋subtree的根的分数。若某个子树为空 ，规定其">
+<meta name="keywords" content="中序遍历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[洛谷P1040]加分二叉树">
+<meta property="og:url" content="https://bubbleioa.github.io/2018/08/16/[洛谷P1040]加分二叉树/index.html">
 <meta property="og:site_name" content="冒泡ioa">
-<meta property="og:description" content="OI竞赛">
+<meta property="og:description" content="题目题目描述设一个n个节点的二叉树tree的中序遍历为（l,2,3,…,n），其中数字1,2,3,…,n为节点编号。每个节点都有一个分数（均为正整数），记第j个节点的分数为di，tree及它的每个子树都有一个加分，任一棵子树subtree（也包含tree本身）的加分计算方法如下：    subtree的左子树的加分× subtree的右子树的加分＋subtree的根的分数。若某个子树为空 ，规定其">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-16T12:35:04.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冒泡ioa">
-<meta name="twitter:description" content="OI竞赛">
+<meta name="twitter:title" content="[洛谷P1040]加分二叉树">
+<meta name="twitter:description" content="题目题目描述设一个n个节点的二叉树tree的中序遍历为（l,2,3,…,n），其中数字1,2,3,…,n为节点编号。每个节点都有一个分数（均为正整数），记第j个节点的分数为di，tree及它的每个子树都有一个加分，任一棵子树subtree（也包含tree本身）的加分计算方法如下：    subtree的左子树的加分× subtree的右子树的加分＋subtree的根的分数。若某个子树为空 ，规定其">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://bubbleioa.github.io/categories/基本数据结构/"/>
+  <link rel="canonical" href="https://bubbleioa.github.io/2018/08/16/[洛谷P1040]加分二叉树/"/>
 
 
 
 
 
-  <title>分类: 基本数据结构 | 冒泡ioa</title>
+  <title>[洛谷P1040]加分二叉树 | 冒泡ioa</title>
   
 
 
@@ -147,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,55 +287,213 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>基本数据结构<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bubbleioa.github.io/2018/08/16/[洛谷P1040]加分二叉树/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bubbleioa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/14/P2rY3n.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冒泡ioa">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/04/[poj2559]Largest Rectangle in a Histogram/" itemprop="url">
-              
-                <span itemprop="name">[poj2559]Largest Rectangle in a Histogram</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">[洛谷P1040]加分二叉树</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-04T01:17:01+08:00"
-              content="2018-08-04" >
-          08-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T20:17:01+08:00">
+                2018-08-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动态规划/" itemprop="url" rel="index">
+                    <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/动态规划/区间dp/" itemprop="url" rel="index">
+                    <span itemprop="name">区间dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/16/[洛谷P1040]加分二叉树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/16/[洛谷P1040]加分二叉树/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/16/[洛谷P1040]加分二叉树/" class="leancloud_visitors" data-flag-title="[洛谷P1040]加分二叉树">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>设一个n个节点的二叉树tree的中序遍历为（l,2,3,…,n），其中数字1,2,3,…,n为节点编号。每个节点都有一个分数（均为正整数），记第j个节点的分数为di，tree及它的每个子树都有一个加分，任一棵子树subtree（也包含tree本身）的加分计算方法如下：<br>    subtree的左子树的加分× subtree的右子树的加分＋subtree的根的分数。若某个子树为空 ，规定其加分为1，叶子的加分就是叶节点本身的分数。不考虑它的空  子树。<br>    试求一棵符合中序遍历为（1,2,3,…,n）且加分最高的二叉树tree。要求输出；<br>    （1）tree的最高加分<br>    （2）tree的前序遍历  </p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第1行：一个整数n（n＜30），为节点个数。</p>
+<p> 第2行：n个用空格隔开的整数，为每个节点的分数（分数＜100）。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>第1行：一个整数，为最高加分（结果不会超过4,000,000,000）。</p>
+<p>第2行：n个用空格隔开的整数，为该树的前序遍历。</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">5 7 1 2 10</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">145</span><br><span class="line">3 1 2 4 5</span><br></pre></td></tr></table></figure>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一道入门的区间dp，当然，根据写法不同你还可以把它归类为树形dp或者记忆化搜索，其实都无所谓啦。<br>作为一道入门题，我们完全可以“显然”地做出来，但是在这里还是想和大家回顾下动态规划以及区间动规。  </p>
+<p>Q：dp特点是什么？<br>A：dp把原问题视作若干个<strong>重叠</strong>的子问题的逐层递进，每个子问题的求解过程都会构成一个“阶段”，在完成一个阶段后，才会执行下一个阶段。<br>Q：dp要满足无后效性，什么叫无后效性？<br>A：已经求解的子问题不受后续阶段的影响。</p>
+<p>有人觉得dp很抽象，那是因为没有一步一步来想，直接听别人的结论，我们在这里以这道题为例，一步一步来推导。</p>
+<p>首先，我们要做的就是<strong>设计状态</strong>，其实就是设计dp数组的含义，它要满足无后效性。<br>关注这个  <em>左子树*右子树+根</em> 我只要知道左子树分数和右子树分数和根的分数（已给出），不就可以了吗？管他子树长什么样！<br>所以，我们$f$数组存的就是最大分数，怎么存呢？<br>我们发现：子树是一个或多个节点的集合。<br>那么我们可不可以开一个$f[i][j]$来表示节点i到节点j成树的最大加分呢？可以先保留这个想法（毕竟暂时也想不到更好的了）。 </p>
+<p>如果这样话，我们就来设计状态转移方程。<br>按照刚刚的设计来说的话，我们的答案就是$f[1][n]$了，那么我们可以从小的子树开始，也就是len，区间长度。有了区间长度我们就要枚举区间起点，i为区间起点，然后就可以算出区间终点j。<br>通过加分二叉树的式子我们可以知道，二叉树的分取决于谁是根，于是我们就在区间内枚举根k。<br>特别的，$f[i][i]=a[i]$其中a[i]为第i个节点的分数。<br>因为是要求最大值，所以我们就可以设计出<br>$$f[i][j]=MAX(f[i][k-1]*f[k+1][j]+f[k][k])$$<br>于是乎，我们就自己设计出了一个dp过程，因为是顺着来的，所以很少有不成立的。  </p>
+<p>至于输出前序遍历，我们再设计一个状态$root[i][j]$来表示节点i到节点j成树的最大加分所选的根节点。<br>所以我们按照$根-&gt;左-&gt;右$的顺序递归输出即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll n;</span><br><span class="line">ll f[MAXN][MAXN], root[MAXN][MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(ll l, ll r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &gt; r)<span class="keyword">return</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld "</span>, root[l][r]);</span><br><span class="line">	<span class="keyword">if</span> (l == r)<span class="keyword">return</span>;</span><br><span class="line">	print(l, root[l][r] - <span class="number">1</span>);</span><br><span class="line">	print(root[l][r]+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;f[i][i]),f[i][i<span class="number">-1</span>]=<span class="number">1</span>, root[i][i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> len = <span class="number">1</span>; len &lt; n; ++len) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + len &lt;= n; ++i) &#123;</span><br><span class="line">			<span class="keyword">int</span> j = i + len;</span><br><span class="line">			f[i][j] = f[i + <span class="number">1</span>][j] + f[i][i];<span class="comment">//默认它的左子树为空，如果有的话，这肯定不是最优解</span></span><br><span class="line">			root[i][j] = i;<span class="comment">//默认从起点选根</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = i + <span class="number">1</span>; k &lt; j; ++k) &#123;</span><br><span class="line">				<span class="keyword">if</span> (f[i][j] &lt; f[i][k - <span class="number">1</span>] * f[k + <span class="number">1</span>][j] + f[k][k]) &#123;</span><br><span class="line">					f[i][j] = f[i][k - <span class="number">1</span>] * f[k + <span class="number">1</span>][j] + f[k][k];</span><br><span class="line">					root[i][j] = k;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; f[<span class="number">1</span>][n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	print(<span class="number">1</span>, n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/中序遍历/" rel="tag"># 中序遍历</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/[洛谷P1771] 方程的解_NOI导刊2010提高/" rel="next" title="[洛谷P1771] 方程的解">
+                <i class="fa fa-chevron-left"></i> [洛谷P1771] 方程的解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -341,6 +501,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -361,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">1.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">1.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">1.5.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -580,6 +772,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
