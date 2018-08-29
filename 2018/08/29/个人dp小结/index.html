@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="单调栈," />
+  <meta name="keywords" content="动态规划," />
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="题目题目描述A histogram is a polygon composed of a sequence of rectangles aligned at a common base line. The rectangles have equal widths but may have different heights. For example, the figure on the left">
-<meta name="keywords" content="单调栈">
+<meta name="description" content="前言：最近做了很多动态规划题，但是每次遇到新的题目的时候还是做不出来，于是就像做一个小结，梳理下近些天做的题目，从中获取经验。  第零节：DP的基础概念动态规划和其他某些算法具有一定的相似度，都是利用问题的可划分性以及子问题的相似性来进行归纳，降低时间复杂度。来说说动态规划的几个基本条件：    条件 解释     无后效性 已求解的子问题不受后续阶段的影响$^{[1]}$   最优子结构 下一">
+<meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[poj2559]Largest Rectangle in a Histogram">
-<meta property="og:url" content="https://bubbleioa.github.io/2018/08/04/[poj2559]Largest Rectangle in a Histogram/index.html">
+<meta property="og:title" content="个人dp小结">
+<meta property="og:url" content="https://bubbleioa.github.io/2018/08/29/个人dp小结/index.html">
 <meta property="og:site_name" content="冒泡ioa">
-<meta property="og:description" content="题目题目描述A histogram is a polygon composed of a sequence of rectangles aligned at a common base line. The rectangles have equal widths but may have different heights. For example, the figure on the left">
+<meta property="og:description" content="前言：最近做了很多动态规划题，但是每次遇到新的题目的时候还是做不出来，于是就像做一个小结，梳理下近些天做的题目，从中获取经验。  第零节：DP的基础概念动态规划和其他某些算法具有一定的相似度，都是利用问题的可划分性以及子问题的相似性来进行归纳，降低时间复杂度。来说说动态规划的几个基本条件：    条件 解释     无后效性 已求解的子问题不受后续阶段的影响$^{[1]}$   最优子结构 下一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.luogu.org/upload/vjudge_pic/SP1805/b9567e3483620f1fe679470ac44083eae9842e79.png">
-<meta property="og:updated_time" content="2018-08-14T07:12:11.159Z">
+<meta property="og:updated_time" content="2018-08-29T09:52:51.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[poj2559]Largest Rectangle in a Histogram">
-<meta name="twitter:description" content="题目题目描述A histogram is a polygon composed of a sequence of rectangles aligned at a common base line. The rectangles have equal widths but may have different heights. For example, the figure on the left">
-<meta name="twitter:image" content="https://cdn.luogu.org/upload/vjudge_pic/SP1805/b9567e3483620f1fe679470ac44083eae9842e79.png">
+<meta name="twitter:title" content="个人dp小结">
+<meta name="twitter:description" content="前言：最近做了很多动态规划题，但是每次遇到新的题目的时候还是做不出来，于是就像做一个小结，梳理下近些天做的题目，从中获取经验。  第零节：DP的基础概念动态规划和其他某些算法具有一定的相似度，都是利用问题的可划分性以及子问题的相似性来进行归纳，降低时间复杂度。来说说动态规划的几个基本条件：    条件 解释     无后效性 已求解的子问题不受后续阶段的影响$^{[1]}$   最优子结构 下一">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://bubbleioa.github.io/2018/08/04/[poj2559]Largest Rectangle in a Histogram/"/>
+  <link rel="canonical" href="https://bubbleioa.github.io/2018/08/29/个人dp小结/"/>
 
 
 
 
 
-  <title>[poj2559]Largest Rectangle in a Histogram | 冒泡ioa</title>
+  <title>个人dp小结 | 冒泡ioa</title>
   
 
 
@@ -303,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bubbleioa.github.io/2018/08/04/[poj2559]Largest Rectangle in a Histogram/">
+    <link itemprop="mainEntityOfPage" href="https://bubbleioa.github.io/2018/08/29/个人dp小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bubbleioa">
@@ -320,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[poj2559]Largest Rectangle in a Histogram</h1>
+          <h1 class="post-title" itemprop="name headline">个人dp小结</h1>
         
 
         <div class="post-meta">
@@ -332,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T01:17:01+08:00">
-                2018-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-29T19:20:01+08:00">
+                2018-08-29
               </time>
             
 
@@ -355,19 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基本数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">基本数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/基本数据结构/栈/" itemprop="url" rel="index">
-                    <span itemprop="name">栈</span>
+                  <a href="/categories/小结/" itemprop="url" rel="index">
+                    <span itemprop="name">小结</span>
                   </a>
                 </span>
 
@@ -384,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/04/[poj2559]Largest Rectangle in a Histogram/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/04/[poj2559]Largest Rectangle in a Histogram/" itemprop="commentCount"></span>
+                <a href="/2018/08/29/个人dp小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/29/个人dp小结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +380,7 @@
 
           
           
-             <span id="/2018/08/04/[poj2559]Largest Rectangle in a Histogram/" class="leancloud_visitors" data-flag-title="[poj2559]Largest Rectangle in a Histogram">
+             <span id="/2018/08/29/个人dp小结/" class="leancloud_visitors" data-flag-title="个人dp小结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,19 +411,111 @@
       
 
       
-        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>A histogram is a polygon composed of a sequence of rectangles aligned at a common base line. The rectangles have equal widths but may have different heights. For example, the figure on the left shows the histogram that consists of rectangles with the heights 2, 1, 4, 5, 1, 3, 3, measured in units where 1 is the width of the rectangles:<br><img src="https://cdn.luogu.org/upload/vjudge_pic/SP1805/b9567e3483620f1fe679470ac44083eae9842e79.png" alt=""><br>Usually, histograms are used to represent discrete distributions, e.g., the frequencies of characters in texts. Note that the order of the rectangles, i.e., their heights, is important. Calculate the area of the largest rectangle in a histogram that is aligned at the common base line, too. The figure on the right shows the largest aligned rectangle for the depicted histogram.</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>The input contains several test cases. Each test case describes a histogram and starts with an integer n, denoting the number of rectangles it is composed of. You may assume that 1 &lt;= n &lt;= 100000. Then follow n integers h1, …, hn, where 0 &lt;= hi &lt;= 1000000000. These numbers denote the heights of the rectangles of the histogram in left-to-right order. The width of each rectangle is 1. A zero follows the input for the last test case.</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>For each test case output on a single line the area of the largest rectangle in the specified histogram. Remember that this rectangle must be aligned at the common base line.</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7 2 1 4 5 1 3 3</span><br><span class="line">4 1000 1000 1000 1000</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">4000</span><br></pre></td></tr></table></figure>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
-<p>部分内容来自李煜东所著《算法竞赛进阶指南》</p>
+        <blockquote>
+<p>前言：最近做了很多动态规划题，但是每次遇到新的题目的时候还是做不出来，于是就像做一个小结，梳理下近些天做的题目，从中获取经验。</p>
 </blockquote>
-<p>如果说这道题矩形的高度是递增的，估计就是一道普及难度的题了吧。<br>我们可以尝试以每个矩形的高度作为最终矩形的高度，并将宽度扩展到右边界，答案取最大值。  </p>
-<p>简单归简单，不过这也给了我们一个启发，如果是递增的我们就放着不管，以后来处理。如果说下一个高度更小，那么用它所构成的矩形的高度不可能超过它自己，而后面的矩形想要和前面的矩形拼接的话，高度也不能超过它。<br>这样子的话，我们就可以用上面的方法更新比当前矩形高的矩形的答案再将它们合并。</p>
-<p>这就是<strong>单调栈</strong>算法，时间复杂度 $ O(N) $<br>借助单调性处理问题的思想在于<strong>及时排除不可能的选项，保持策略集合的高度有效性和秩序性</strong>  </p>
-<p>就这拿道题举例，我们建立一个栈，用来保存若干个矩形，这些矩形的高度是<strong>单调递增</strong>的，或者说，我们期望他是<strong>单调递增</strong>的。<br>我们从左到右读入矩形：<br>如果当前矩形比栈顶矩形高，即满足<strong>单调递增</strong>，进栈。<br>否则不断去除栈顶，直至栈空或栈顶高度低于当前矩形。在此过程中，我们累计被弹出的矩形的宽度和（用于计算答案与合并），用高度×累计宽度更新答案。而后，将一个宽度为累计宽度，高度为当前矩形的矩形入栈。<br>结束，将剩余矩形弹出，和上面一样更新答案；</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,p;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">100010</span>],w[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        ans=<span class="number">0</span>; p=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        a[n+<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+<span class="number">1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i]&gt;s[p]) s[++p]=a[i],w[p]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> width=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(s[p]&gt;a[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    width+=w[p];</span><br><span class="line">                    ans=max(ans,(<span class="keyword">long</span> <span class="keyword">long</span>)width*s[p]);</span><br><span class="line">                    p--;</span><br><span class="line">                &#125;</span><br><span class="line">                s[++p]=a[i],w[p]=width+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第零节：DP的基础概念"><a href="#第零节：DP的基础概念" class="headerlink" title="第零节：DP的基础概念"></a>第零节：DP的基础概念</h1><p>动态规划和其他某些算法具有一定的相似度，都是利用<font color="FF0000"><strong>问题的可划分性</strong></font>以及<font color="FF0000"><strong>子问题的相似性</strong></font>来进行归纳，降低时间复杂度。<br>来说说动态规划的几个基本条件：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">条件</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无后效性</td>
+<td style="text-align:center">已求解的子问题不受后续阶段的影响$^{[1]}$</td>
+</tr>
+<tr>
+<td style="text-align:center">最优子结构</td>
+<td style="text-align:center">下一个阶段的最优解应该能够由前面各阶段子问题的最优解导出</td>
+</tr>
+<tr>
+<td style="text-align:center">子问题重叠</td>
+<td style="text-align:center">动态规划通过对每个子问题只解一次，把解保存在一个需要时就可以查看的表中$^{[2]}$</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[1]：在《算法竞赛进阶指南》中有一个很好的说法，“动态规划对状态空间的遍历构成一张有向无环图，遍历顺序就是该图的一个拓扑序。”<br>[2]：其实就是动态规划会用查询的方式解决重复出现的子问题，而不是像递归那样每次算一遍。</p>
+</blockquote>
+<p>构成动态规划的三要素：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">要素</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">状态</td>
+<td style="text-align:center">即我们通常所说的f或dp数组，他们用来表示什么</td>
+</tr>
+<tr>
+<td style="text-align:center">阶段</td>
+<td style="text-align:center">即各个状态在不同时刻的表示</td>
+</tr>
+<tr>
+<td style="text-align:center">决策</td>
+<td style="text-align:center">状态如何转移到 下一个状态</td>
+</tr>
+</tbody>
+</table>
+<p>知道了这些并没有什么用，重要的还是在题目中体会。</p>
+<h1 id="第一节：线性DP"><a href="#第一节：线性DP" class="headerlink" title="第一节：线性DP"></a>第一节：线性DP</h1><p>我们在解决一些线性区间上的最优化问题的时候，往往也能够利用到动态规划的思想，这种问题可以叫做线性dp。  </p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 线性空间  </li>
+</ul>
+<p>在有关线性dp问题中，有着几个比较经典而基础的模型，例如最长上升子序列(LIS)、最长公共子序列(LCS)、最大子序列和等，那么首先我们从这几个经典的问题出发开始对线性dp的探索。</p>
+<blockquote>
+<p>注：下表引用自《算法竞赛进阶指南》P258表</p>
+</blockquote>
+<hr>
+<font size="4"><center>LIS问题</center></font>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">问题描述</td>
+<td style="text-align:center">最长上升子序列。给定一个长度为$N$的数列$A$，求数值单调递增的子序列的长度是多少。$A$的任意子序列$B$可表示为$B={A_{k1},A_{k2},…,A_{kp}}$，其中$k_1&lt;k_2&lt;…&lt;k_p$</td>
+</tr>
+<tr>
+<td style="text-align:center">状态表示</td>
+<td style="text-align:center">$F[i]$表示以$A[i]$为结尾的“最长上升子序列”的长度</td>
+</tr>
+<tr>
+<td style="text-align:center">阶段划分</td>
+<td style="text-align:center">子序列的位置（数列$A$中的位置，从前到后）</td>
+</tr>
+<tr>
+<td style="text-align:center">转移方程</td>
+<td style="text-align:center">$F[i]=max{F[j]+1},0\le j&lt;i,A[j]&lt;A[i]$</td>
+</tr>
+<tr>
+<td style="text-align:center">边界</td>
+<td style="text-align:center">$F[0]=0$</td>
+</tr>
+<tr>
+<td style="text-align:center">目标</td>
+<td style="text-align:center">$max{F[i]},1\le i \le N$</td>
+</tr>
+</tbody>
+</table>
+<p>还有两个大家自行看书~（打这个太累啦）<br>通过这三个问题，我们可以了解到，线性DP无论是多维还是一维，“线性”都体现在“作用在空间上的递推”————DP的阶段沿着各个维度线性增长，从一个或多个“边界点”开始有方向地向整个状态空间转移、扩展，最后每个状态上都保留了以自身为目标子问题的最优解。<br>下面我们开始线性DP的进阶，我们从例题开始。</p>
+<h3 id="【例1】Mr-Young’s-Picture-Permutations-poj2279"><a href="#【例1】Mr-Young’s-Picture-Permutations-poj2279" class="headerlink" title="【例1】Mr. Young’s Picture Permutations$^{poj2279}$"></a><a href="https://bubbleioa.github.io/2018/08/26/[SP15637][POJ2279]GNYR04H%20-%20Mr%20Youngs%20Picture%20Permutations/">【例1】Mr. Young’s Picture Permutations$^{poj2279}$</a></h3><p>这是一个五维的线性DP，从该题给出的解法中我们发现，设计动态规划的状态转移方程，不一定要以“如何计算出一个状态”的形式给出，也可以考虑“<strong>一个已知状态应该更新哪些后续阶段的未知状态</strong>”。</p>
+<h1 id="第二节：背包"><a href="#第二节：背包" class="headerlink" title="第二节：背包"></a>第二节：背包</h1><p>其实我们OIer很多时候都是靠眼睛学习的，偶尔通过听觉也是不错的。  </p>
+<iframe src="//player.bilibili.com/player.html?aid=7752071&cid=12709344&page=1" width="620" height="470" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="⭐0-1背包"><a href="#⭐0-1背包" class="headerlink" title="⭐0/1背包"></a>⭐0/1背包</h2><h2 id="⭐完全背包"><a href="#⭐完全背包" class="headerlink" title="⭐完全背包"></a>⭐完全背包</h2><h2 id="⭐多重背包"><a href="#⭐多重背包" class="headerlink" title="⭐多重背包"></a>⭐多重背包</h2><h2 id="⭐分组背包"><a href="#⭐分组背包" class="headerlink" title="⭐分组背包"></a>⭐分组背包</h2><h1 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h1><h1 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h1><h2 id="⭐背包类树形DP"><a href="#⭐背包类树形DP" class="headerlink" title="⭐背包类树形DP"></a>⭐背包类树形DP</h2><p>推荐个视频  </p>
+<iframe src="//player.bilibili.com/player.html?aid=19615811&cid=31986336&page=1" scrolling="no" border="0" frameborder="no" width="620" height="470" framespacing="0" allowfullscreen="true"> </iframe>
       
     </div>
     
@@ -453,7 +532,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/单调栈/" rel="tag"># 单调栈</a>
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
           
         </div>
       
@@ -466,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/26/团委招新/" rel="next" title="宜春中学团委招新啦！！">
-                <i class="fa fa-chevron-left"></i> 宜春中学团委招新啦！！
+              <a href="/2018/08/26/[SP15637][POJ2279]GNYR04H - Mr Youngs Picture Permutations/" rel="next" title="[SP15637][POJ2279]GNYR04H - Mr Youngs Picture Permutations">
+                <i class="fa fa-chevron-left"></i> [SP15637][POJ2279]GNYR04H - Mr Youngs Picture Permutations
               </a>
             
           </div>
@@ -475,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/04/[BZOJ4195][Noi2015]程序自动分析/" rel="prev" title="[BZOJ4195][Noi2015]程序自动分析">
-                [BZOJ4195][Noi2015]程序自动分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -631,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">1.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">1.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">1.5.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第零节：DP的基础概念"><span class="nav-number">1.</span> <span class="nav-text">第零节：DP的基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一节：线性DP"><span class="nav-number">2.</span> <span class="nav-text">第一节：线性DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【例1】Mr-Young’s-Picture-Permutations-poj2279"><span class="nav-number">2.0.1.</span> <span class="nav-text">【例1】Mr. Young’s Picture Permutations$^{poj2279}$</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二节：背包"><span class="nav-number">3.</span> <span class="nav-text">第二节：背包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#⭐0-1背包"><span class="nav-number">3.1.</span> <span class="nav-text">⭐0/1背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⭐完全背包"><span class="nav-number">3.2.</span> <span class="nav-text">⭐完全背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⭐多重背包"><span class="nav-number">3.3.</span> <span class="nav-text">⭐多重背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#⭐分组背包"><span class="nav-number">3.4.</span> <span class="nav-text">⭐分组背包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#区间DP"><span class="nav-number">4.</span> <span class="nav-text">区间DP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树形DP"><span class="nav-number">5.</span> <span class="nav-text">树形DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#⭐背包类树形DP"><span class="nav-number">5.1.</span> <span class="nav-text">⭐背包类树形DP</span></a></li></ol></li></ol></div>
             
 
           </div>
