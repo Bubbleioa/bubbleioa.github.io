@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="OI竞赛">
+<meta name="description" content="题目题目描述给出 $N$ ,求 $1$  到 $N$ 个数中选出任意个数相乘能组成的最大平方数,由于此数可能很大,你只需要输出此数除 $100000007$ 的余数即可。 样例输入17 样例输出1144 样例解释$2\times 3 \times 4\times 6=144$ 数据下载由于各大oj可能没有，故在此提供测试数据 题解题目就是这么简单，然而考试并没有想到$QAQ$因为是任意个数相乘，我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[开学考试]最大平方数">
 <meta property="og:url" content="https://bubbleioa.github.io/2018/08/15/[开学考试]最大平方数/index.html">
 <meta property="og:site_name" content="冒泡ioa">
-<meta property="og:description" content="OI竞赛">
+<meta property="og:description" content="题目题目描述给出 $N$ ,求 $1$  到 $N$ 个数中选出任意个数相乘能组成的最大平方数,由于此数可能很大,你只需要输出此数除 $100000007$ 的余数即可。 样例输入17 样例输出1144 样例解释$2\times 3 \times 4\times 6=144$ 数据下载由于各大oj可能没有，故在此提供测试数据 题解题目就是这么简单，然而考试并没有想到$QAQ$因为是任意个数相乘，我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-08T11:59:53.370Z">
+<meta property="og:updated_time" content="2018-09-08T12:33:10.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[开学考试]最大平方数">
-<meta name="twitter:description" content="OI竞赛">
+<meta name="twitter:description" content="题目题目描述给出 $N$ ,求 $1$  到 $N$ 个数中选出任意个数相乘能组成的最大平方数,由于此数可能很大,你只需要输出此数除 $100000007$ 的余数即可。 样例输入17 样例输出1144 样例解释$2\times 3 \times 4\times 6=144$ 数据下载由于各大oj可能没有，故在此提供测试数据 题解题目就是这么简单，然而考试并没有想到$QAQ$因为是任意个数相乘，我">
 
 
 
@@ -421,7 +421,19 @@
       
 
       
-        
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出 $N$ ,求 $1$  到 $N$ 个数中选出任意个数相乘能组成的最大平方数,由<br>于此数可能很大,你只需要输出此数除 $100000007$ 的余数即可。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">144</span><br></pre></td></tr></table></figure>
+<h2 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h2><p>$2\times 3 \times 4\times 6=144$</p>
+<h2 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h2><p>由于各大oj可能没有，故在此提供<a href="https://bubbleioa.github.io/Square.zip">测试数据</a></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>题目就是这么简单，然而考试并没有想到$QAQ$<br>因为是任意个数相乘，我们可以将$N!$进行质因数分解<br>然后因为$A^2\times B^2=(A\times B)^2$<br>我们就可以把所有的2的整数倍次方全部乘入答案里，就是最大的平方数。</p>
+<p>而普通的方法分解$N!$需要$O(N\sqrt{N})$的时间复杂度，我们可以考虑一种新方法。</p>
+<p>显然，$N!$的每个质因子都不会超过$N$，我们可以先筛选出$1-N$的每个质数$p$，然后考虑阶乘中一共包含多少个质因子$p$</p>
+<p>$N!$中质因子$p$的个数就等于$1-N$每个数包含的质因子$p$的个数之和。在$1-N$中，$p$的倍数，即至少包含1个质因子$p$的显然有$\lfloor N/p \rfloor$个。而$p^2$的倍数，即至少包含2个质因子$p$的有$\lfloor N/p^2 \rfloor$个。不过其中的一个质因子已经在$\lfloor N/p \rfloor$中统计过，所以只需要再统计第2个质因子，即累加上$\lfloor N/p^2 \rfloor$，而不是$2\times \lfloor N/p^2 \rfloor$</p>
+<p>综上所述，$N!$中质因子$p$的个数为：</p>
+<p>$$ \left\lfloor \dfrac{N}{P} \right\rfloor+\left\lfloor \dfrac{N}{P^2} \right\rfloor+\left\lfloor \dfrac{N}{P^3} \right\rfloor+\dots+\left\lfloor \frac{N}{P^{\lfloor log_p N \rfloor}} \right\rfloor=\sum_{p^k\le N}\left\lfloor \dfrac{N}{P^k} \right\rfloor $$</p>
+<p>上面的计算只需要$O(logN)$的时间<br>整个过程只需要$O(NlogN)$的时间</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">100000007</span>;</span><br><span class="line"><span class="keyword">int</span> n,ans=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">10000010</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; prime;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_prime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v[i])<span class="keyword">continue</span>;</span><br><span class="line">        prime.push_back(i);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n/i;j++)v[i*j]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    get_prime(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prime.size();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> p=prime[i],c=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=n;j;j/=p)c+=j/p;</span><br><span class="line">        <span class="keyword">if</span>(c==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(c&amp;<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;c;i++)ans=(<span class="keyword">long</span> <span class="keyword">long</span>)ans*p%mod;<span class="comment">//这里要么取两次mod，要么用long long，后者快一点，当然可以用快速幂，更快（我懒orz</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=c;i++)ans=(<span class="keyword">long</span> <span class="keyword">long</span>)ans*p%mod;<span class="comment">//这里要么取两次mod，要么用long long，后者快一点，当然可以用快速幂，更快</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -512,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">1.2.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">1.3.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例解释"><span class="nav-number">1.4.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据下载"><span class="nav-number">1.5.</span> <span class="nav-text">数据下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
