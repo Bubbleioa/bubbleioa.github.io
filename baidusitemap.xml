@@ -55,6 +55,29 @@
 
     
   <url>
+    <loc>https://bubbleioa.github.io/2018/07/09/%5Bpoj1845%5DSumdiv/</loc>
+    <lastmod>2018-10-01T09:14:30.180Z</lastmod>
+    <data>
+        <display>
+        <title>[poj1845]Sumdiv</title>
+        <pubTime>2018-07-09T14:17:01.000Z</pubTime>
+        
+        <tag>快速幂</tag>
+         
+         
+           
+             
+              <breadCrumb title="数学" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+          
+             
+              <breadCrumb title="数论" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/%E6%95%B0%E8%AE%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://bubbleioa.github.io/2018/07/05/%5B%E6%B4%9B%E8%B0%B7P1880%5D%5BNOI1995%5D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/</loc>
     <lastmod>2018-10-01T09:04:34.899Z</lastmod>
     <data>
@@ -666,29 +689,6 @@
            
              
               <breadCrumb title="杂记" url="https://bubbleioa.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://bubbleioa.github.io/2018/07/09/%5Bpoj1845%5DSumdiv/</loc>
-    <lastmod>2018-07-09T14:01:40.053Z</lastmod>
-    <data>
-        <display>
-        <title>[poj1845]Sumdiv</title>
-        <pubTime>2018-07-09T14:17:01.000Z</pubTime>
-        
-        <tag>快速幂</tag>
-         
-         
-           
-             
-              <breadCrumb title="数学" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-          
-             
-              <breadCrumb title="数论" url="https://bubbleioa.github.io/categories/%E6%95%B0%E5%AD%A6/%E6%95%B0%E8%AE%BA/"/>
           
         </display>
     </data>
