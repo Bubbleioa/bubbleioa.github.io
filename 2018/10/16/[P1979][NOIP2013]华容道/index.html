@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="ujf03pw9oV" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bubbles_32px_1156423_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bubbles_16px_1156423_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="bfs,预处理," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="样例输入1234563 4 20 1 1 10 1 1 00 1 0 03 2 1 2 2 21 2 2 2 3 2 样例输出122-1  题解 算法分析摘自《2013全国信息学奥林匹克年鉴》  算法分析这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）本题是一个很典型的最短路模型的题目。假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结">
+<meta name="keywords" content="bfs,预处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[P1979][NOIP2013]华容道">
+<meta property="og:url" content="https://bubbleioa.github.io/2018/10/16/[P1979][NOIP2013]华容道/index.html">
+<meta property="og:site_name" content="冒泡ioa">
+<meta property="og:description" content="样例输入1234563 4 20 1 1 10 1 1 00 1 0 03 2 1 2 2 21 2 2 2 3 2 样例输出122-1  题解 算法分析摘自《2013全国信息学奥林匹克年鉴》  算法分析这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）本题是一个很典型的最短路模型的题目。假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道1.png">
+<meta property="og:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道2.png">
+<meta property="og:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道3.png">
+<meta property="og:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道4.png">
+<meta property="og:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道5.png">
+<meta property="og:updated_time" content="2018-11-24T09:18:18.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[P1979][NOIP2013]华容道">
+<meta name="twitter:description" content="样例输入1234563 4 20 1 1 10 1 1 00 1 0 03 2 1 2 2 21 2 2 2 3 2 样例输出122-1  题解 算法分析摘自《2013全国信息学奥林匹克年鉴》  算法分析这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）本题是一个很典型的最短路模型的题目。假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结">
+<meta name="twitter:image" content="http://bubbleioa.top/wp-content/uploads/2018/10/华容道1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'E8TLXXW1X7',
+      apiKey: 'f3c0e23ef5abd23678e3eafa10ee6634',
+      indexName: 'Bubbleioa',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bubbleioa.github.io/2018/10/16/[P1979][NOIP2013]华容道/"/>
+
+
+
+
+
+  <title>[P1979][NOIP2013]华容道 | 冒泡ioa</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冒泡ioa</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bubbleioa.github.io/2018/10/16/[P1979][NOIP2013]华容道/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bubbleioa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://bubbleioa.top/wp-content/uploads/2018/10/63738985_p0-2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冒泡ioa">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[P1979][NOIP2013]华容道</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T16:33:01+08:00">
+                2018-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/图论/" itemprop="url" rel="index">
+                    <span itemprop="name">图论</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/图论/最短路/" itemprop="url" rel="index">
+                    <span itemprop="name">最短路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/16/[P1979][NOIP2013]华容道/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/16/[P1979][NOIP2013]华容道/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/16/[P1979][NOIP2013]华容道/" class="leancloud_visitors" data-flag-title="[P1979][NOIP2013]华容道">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://bubbleioa.top/wp-content/uploads/2018/10/华容道1.png" alt=""><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/华容道2.png" alt=""><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/华容道3.png" alt=""></p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3 4 2</span><br><span class="line">0 1 1 1</span><br><span class="line">0 1 1 0</span><br><span class="line">0 1 0 0</span><br><span class="line">3 2 1 2 2 2</span><br><span class="line">1 2 2 2 3 2</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<p><img src="http://bubbleioa.top/wp-content/uploads/2018/10/华容道4.png" alt=""><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/华容道5.png" alt=""></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
+<p>算法分析摘自<kbd>《2013全国信息学奥林匹克年鉴》</kbd></p>
+</blockquote>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）<br>本题是一个很典型的最短路模型的题目。<br>假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结点连上一条边权为1的边。那么问题就成了求这样建成的图中从初始局面对应的结点到达指定移动格在目标位置的局面对应的那些结点的最短路。也就是求边权都为1的途中的一个单源最短路，用BFS就可以解决这个问题了。具体做法如下：   </p>
+<hr>
+<p>用(EX,EY,MX,MY)表示空白格在(EX,EY)，指定移动格在(MX,MY)的局面所对应的结点。   </p>
+<ol>
+<li>将(EX,EY,SX,SY)进队，将Distance(EX,EY,SX,SY)设为0。</li>
+<li>若队为空，则输出无解，算法结束。</li>
+<li>将队首元素取出，设为(EX,EY,MX,MY)。</li>
+</ol>
+<ul>
+<li>若(MX,MY)等于(TX,TY)，则Distance(EX,EY,MX,MY)即为所求答案，算法结束。  </li>
+<li>否则，设由(EX,EY,MX,MY)能到达的局面(EX’,EY’,MX’,MY’)，且(EX’,EY’,MX’,MY’)从未进队过，则将(EX’,EY’,MX’,MY’)进队，将Distance(EX’,EY’,MX’,MY’)设Distance(EX,EY,MX,MY)+1，然后跳至步骤2.</li>
+</ul>
+<p>可以知道，一个局面由空白格的位置和指定移动格的位置唯一确定，所以局面的数量是[latex]O((nm)^2)[/latex]的，也就是说建成的图的结点数是[latex]O((nm)^2)[/latex]的。由于每个局面只可能通过空格和上下左右的移动格交换来变成另外一个局面，所以建成的图中的边数也是[latex]O((nm)^2)[/latex]的。因此求一次最短路的时间复杂度就为[latex]O(V+E)[/latex]，即[latex]O((nm)^2)[/latex]。但是询问有q次，所以总的时间复杂度为[latex]O(q(nm)^2)[/latex]。</p>
+<p>我们发现之间bfs不能满足题目的要求，所以算法还需要优化。</p>
+<p>进一步分析可以发现，指定移动格只有当空白格在它附近才能移动，所以游戏的过程可以看成将空白格先移动到指定移动格附近（此处不考虑初始位置和目标位置相同的情况），然后指定移动格和空白格交换，再将空白格移动到指定移动格附近，然后再将空白格移动到指定移动格附近，然后再将指定移动格和空白格交换……如此循环下去，直至指定移动格达到目标位置。</p>
+<p>如果只考虑空白格在指定移动格附近的局面，那这样的局面数显然是[latex]O(nm)[/latex]的。而局面之间的转移我们只考虑两种，一种是交换指定移动格附近的位置（比如由上方移动到右方）。第一种转移只需要一步，而第二种转移所需的步数就等于固定指定移动格后将空白格移动所需的最小步数，这个步数可以bfs求出，且由于这样的bfs只有[latex]O(nm)[/latex]种，且每种所需的时间是[latex]O(nm)[/latex]，所以我们可以在[latex]O((nm)^2)[/latex]的时间内预处理出来(或者像标程一样采用记忆化的方法)。</p>
+<p>两种转移总共最多能转移到5个新的局面，所以暗张这样的局面来建图，点数和边数都是[latex]O(nm)[/latex]的，但是边权就不是全为1了，所以需要用dijsktra算法来求最短路，时间复杂度为[latex]O(nm\times log(nm))[/latex]。加上预处理，总的时间复杂度为[latex]O((nm)^2+nm\times log(nm))[/latex]</p>
+<p>至此，本题就完美地解决了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>代码来自@<a href="https://www.luogu.org/space/show?uid=13091" target="_blank" rel="noopener">ghj1222</a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//方向数组 </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;, dy[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//mp是读入的地图，tt[i][j][d1][d2]是不经过(i,j)的情况下，(i,j)的d1方向转移到 (i,j)的d2方向的最短距离</span></span><br><span class="line"><span class="comment">//d是广搜求距离用到的d数组，di是dijkstra时用到的d数组 v是dijkstra时用到的标记数组 </span></span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">32</span>][<span class="number">32</span>], tt[<span class="number">32</span>][<span class="number">32</span>][<span class="number">4</span>][<span class="number">4</span>], d[<span class="number">32</span>][<span class="number">32</span>], di[<span class="number">32</span>][<span class="number">32</span>][<span class="number">4</span>];</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">32</span>][<span class="number">32</span>][<span class="number">4</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, q;<span class="comment">//如题 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//dijkstra过程中用到的状态结构体 </span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">st</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, d, dis;</span><br><span class="line">    st(<span class="keyword">int</span> x = <span class="number">0</span>, <span class="keyword">int</span> y = <span class="number">0</span>, <span class="keyword">int</span> d = <span class="number">0</span>, <span class="keyword">int</span> dis = <span class="number">0</span>) : x(x), y(y), d(d), dis(dis)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//构造函数 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&gt;(<span class="keyword">const</span> st &amp;a, <span class="keyword">const</span> st &amp;b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取当前方向与dir相反的方向 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rev</span><span class="params">(<span class="keyword">int</span> dir)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  printf("(%d,%d) - &gt; (%d,%d)\n", dx[dir], dy[dir], dx[dir ^ 1], dy[dir ^ 1]);</span></span><br><span class="line">    <span class="keyword">return</span> dir ^ <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//因为要使用小根堆，所以这里重载了大于号 </span></span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&gt;(<span class="keyword">const</span> st &amp;a, <span class="keyword">const</span> st &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a.dis &gt; b.dis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断一个点是否合法(是否能够走到) </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">valid</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;= <span class="number">1</span> &amp;&amp; x &lt;= n &amp;&amp; y &gt;= <span class="number">1</span> &amp;&amp; y &lt;= m &amp;&amp; mp[x][y] == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用bfs算法求出(x1,y1)到(x2,y2)的距离 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dis</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2, <span class="keyword">int</span> y2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  printf("求出(%d,%d)到(%d,%d)的距离\n", x1, y1, x2, y2); </span></span><br><span class="line">    <span class="keyword">if</span>(x1 == x2 &amp;&amp; y1 == y2)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(d, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(d));</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; qx, qy;<span class="comment">//队列 </span></span><br><span class="line">    qx.push(x1);</span><br><span class="line">    qy.push(y1);</span><br><span class="line">    d[x1][y1] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!qx.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x = qx.front(), y = qy.front();</span><br><span class="line">        qx.pop();</span><br><span class="line">        qy.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> nx = x + dx[i], ny = y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(valid(nx, ny) &amp;&amp; d[nx][ny] &gt;= inf)<span class="comment">//当前方块合法且没有被搜索 </span></span><br><span class="line">            &#123;</span><br><span class="line">                d[nx][ny] = d[x][y] + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(nx == x2 &amp;&amp; ny == y2)<span class="comment">//到了终点 </span></span><br><span class="line">                &#123;</span><br><span class="line"><span class="comment">//                  printf("(%d,%d)到(%d,%d)的距离为%d\n", x1, y1, x2, y2, d[nx][ny]); </span></span><br><span class="line">                    <span class="keyword">return</span> d[nx][ny];</span><br><span class="line">                &#125;</span><br><span class="line">                qx.push(nx);</span><br><span class="line">                qy.push(ny);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prework</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x1, y1, x2, y2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                mp[i][j] = <span class="number">0</span>;<span class="comment">//暂时将(i,j)标记为不可以动的方块 </span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> src = <span class="number">0</span>; src &lt;= <span class="number">3</span>; src++)<span class="comment">//枚举d1 </span></span><br><span class="line">                    <span class="keyword">if</span> (valid(x1 = i + dx[src], y1 = j + dy[src]))<span class="comment">//d1方向的块合法 </span></span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> dest = <span class="number">0</span>; dest &lt;= <span class="number">3</span>; dest++)<span class="comment">//枚举d2 </span></span><br><span class="line">                            <span class="keyword">if</span> (valid(x2 = i + dx[dest], y2 = j + dy[dest]))<span class="comment">//d2方向的块合法 </span></span><br><span class="line">                                tt[i][j][src][dest] = dis(x1, y1, x2, y2);<span class="comment">//求两个块间的距离 </span></span><br><span class="line">                mp[i][j] = <span class="number">1</span>;<span class="comment">//还原标记 </span></span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ex, ey, sx, sy, tx, ty;<span class="comment">//如题 </span></span><br><span class="line">    priority_queue&lt;st, <span class="built_in">vector</span>&lt;st&gt;, greater&lt;st&gt; &gt;pq;<span class="comment">//小根堆 </span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d%d"</span>, &amp;ex, &amp;ey, &amp;sx, &amp;sy, &amp;tx, &amp;ty);</span><br><span class="line">    <span class="keyword">if</span>(sx == tx &amp;&amp; sy == ty)<span class="comment">//他本来就在目标位置 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(di, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(di));<span class="comment">//初始化距离数组 </span></span><br><span class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span>(v));<span class="comment">//初始化 </span></span><br><span class="line">    mp[sx][sy] = <span class="number">0</span>;<span class="comment">///注意要把指定可移动块标记为不可移动 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)<span class="comment">//枚举空白格子去指定可移动块的那个方向 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> nx = sx + dx[i], ny = sy + dy[i];</span><br><span class="line">        <span class="keyword">if</span> (valid(nx, ny))<span class="comment">//这个位置合法 </span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> ds = dis(ex, ey, nx, ny);<span class="comment">//计算距离 </span></span><br><span class="line">            pq.push(st(sx, sy, i, ds));<span class="comment">//扔进小根堆，dij用 </span></span><br><span class="line">            di[sx][sy][i] = ds;<span class="comment">//更新dijkstra的di数组 </span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    mp[sx][sy] = <span class="number">1</span>;<span class="comment">//把指定可移动块不可移动的标记还原 </span></span><br><span class="line">    <span class="keyword">while</span> (!pq.empty())<span class="comment">//dijkstra的套路 </span></span><br><span class="line">    &#123;</span><br><span class="line">        st now = pq.top();</span><br><span class="line">        pq.pop();</span><br><span class="line"><span class="comment">//      printf("迪杰斯特拉 %d %d (%d,%d) %d\n", now.x, now.y, dx[now.d], dy[now.d], now.dis); </span></span><br><span class="line">        <span class="keyword">if</span> (v[now.x][now.y][now.d] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        v[now.x][now.y][now.d] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> &amp;x = now.x, &amp;y = now.y; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> nx = x + dx[i], ny = y + dy[i];<span class="comment">//让空白块移动到(nx,ny)然后让指定可移动块移动到空白块位置 </span></span><br><span class="line"><span class="comment">//          printf("下一个为(%d,%d)\n", nx, ny); </span></span><br><span class="line">            <span class="keyword">if</span> (valid(nx, ny))<span class="comment">//(nx,ny)是合法的 </span></span><br><span class="line">            &#123;</span><br><span class="line"><span class="comment">//              printf("(%d,%d)合法\n", nx, ny); </span></span><br><span class="line">                <span class="keyword">int</span> ds = tt[x][y][now.d][i];<span class="comment">//直接从tt数组获取空白格子移动的距离 </span></span><br><span class="line">                <span class="keyword">if</span> (v[nx][ny][rev(i)] == <span class="number">0</span> &amp;&amp; now.dis + ds + <span class="number">1</span> &lt; di[nx][ny][rev(i)])<span class="comment">//dij套路，更新距离 </span></span><br><span class="line">                &#123;</span><br><span class="line"><span class="comment">//                  printf("由(%d,%d,%d,%d,%d)到(%d,%d,%d,%d,%d)\n", now.x, now.y, dx[now.d], dy[now.d], now.dis, nx, ny, dx[rev(i)], dy[rev(i)], now.dis + ds + 1); </span></span><br><span class="line">                    di[nx][ny][rev(i)] = now.dis + ds + <span class="number">1</span>;</span><br><span class="line">                    pq.push(st(nx, ny, rev(i), now.dis + ds + <span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mind = inf;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)<span class="comment">//枚举目标位置的4个方向的状态更新最小值 </span></span><br><span class="line">    &#123;</span><br><span class="line">        mind = min(mind, di[tx][ty][i]);</span><br><span class="line"><span class="comment">//      printf("di[%d][%d][%d] = %d\n", tx, ty, i, di[tx][ty][i]);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (mind == inf)<span class="comment">//最小值没有被更新，说明目标位置不可到达 </span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, mind);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//主函数 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;mp[i][j]);</span><br><span class="line">    prework();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= q; i++)</span><br><span class="line">        work();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bfs/" rel="tag"># bfs</a>
+          
+            <a href="/tags/预处理/" rel="tag"># 预处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/[NOIP2012]国王游戏/" rel="next" title="[NOIP2012]国王游戏">
+                <i class="fa fa-chevron-left"></i> [NOIP2012]国王游戏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://bubbleioa.top/wp-content/uploads/2018/10/63738985_p0-2.jpg"
+                alt="Bubbleioa" />
+            
+              <p class="site-author-name" itemprop="name">Bubbleioa</p>
+              <p class="site-description motion-element" itemprop="description">OI竞赛</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.kasaharasei.com/" title="kasaharasei" target="_blank">kasaharasei</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bubbleioa.top/" title="我的新博客" target="_blank">我的新博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">1.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">2.</span> <span class="nav-text">样例输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number"></span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-number"></span> <span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number"></span> <span class="nav-text">代码</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bubbleioa</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '09WWr8LOs4AO8DK76dXGnYvj-gzGzoHsz',
+        appKey: '8wauWaWg2NK9QMdcPkj31co3',
+        placeholder: 'Hello World!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("09WWr8LOs4AO8DK76dXGnYvj-gzGzoHsz", "8wauWaWg2NK9QMdcPkj31co3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":0.5,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","vOffset":-100,"width":150,"height":300},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":1},"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+</html>
